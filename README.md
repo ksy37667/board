@@ -23,7 +23,7 @@
 * ```POST /api/user/refresh```
 ---
 ### Comment API
-* ```GET /api/comment/wirte```
+* ```POST /api/comment/write```
 * ```GET /api/comment/read/{id}```
 * ```DELETE /api/comment/delete/{id}```
 * ```POST /api/comment/update/{id}```
