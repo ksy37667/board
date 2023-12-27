@@ -354,10 +354,8 @@
     ```
     {
       "data": {
-        "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJxcHdvZWkxOTQ1NkBnbWFpbC5jb20iLCJyb2xlcyI6Im51bGwiLCJ1c2VySWQiOjEsIm5hbWUiOiJsZWVoaGgiLCJpYXQiOjE3MDM2NTQwMzQsImV4cCI6MTcwMzY2NjAzNH0.6KPHnNB9H7zUkCO1PQrCE7f0nzuZUgmnkIWBKUU2W4w",
-        "refreshToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJxcHdvZWkxOTQ1NkBnbWFpbC5jb20iLCJyb2xlcyI6IlJPTEVfVVNFUiIsInVzZXJJZCI6MSwibmFtZSI6ImxlZWhoaCIsImlhdCI6MTcwMzY1MDM3NiwiZXhwIjoxNzA0MjU1MTc2fQ.mlxcplv6tQEVcyfXbhFKDvkUQUN1ihcGZEn6GmhrrI4",
-        "userId": 1,
-        "username": "leehhh"
+        "commentId": 2,
+        "success": true
       }
     }
     ```
