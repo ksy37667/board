@@ -4,7 +4,8 @@
 * Spring Data JPA
 * Mysql 8.0
 * Gradle
-
+## 개발 기간
+* 2023.12.15 ~ 2023.12.22
 <br/>
 
 
