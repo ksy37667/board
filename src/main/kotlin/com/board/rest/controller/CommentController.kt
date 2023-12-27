@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.*
 
 
 @Api(tags = ["Comment API"], description = "댓글 API")
-@RestController("/api/comment")
+@RestController
+@RequestMapping("/api/comment")
 class CommentController(
     private val commentCrudService: CommentCrudService
 ) {
 
-    @PostMapping("/write")
+    @PostMapping
     fun write(
         @RequestHeader("Authorization") token: String,
         @IfLogin loginUserDto: LoginUserDto,
@@ -26,14 +27,14 @@ class CommentController(
         return commentCrudService.write(commentWriteRequest, loginUserDto).wrapDataResponse()
     }
 
-    @GetMapping("/read/{postId}")
+    @GetMapping("/{postId}")
     fun read(
         @PathVariable(name = "postId") postId: Long
     ): APIEnvelop<*> {
         return commentCrudService.read(postId).wrapDataResponse()
     }
 
-    @DeleteMapping("/delete/{commentId}")
+    @DeleteMapping("/{commentId}")
     fun delete(
         @RequestHeader("Authorization") token: String,
         @IfLogin loginUserDto: LoginUserDto,
@@ -42,7 +43,7 @@ class CommentController(
         return commentCrudService.delete(commentId, loginUserDto).wrapDataResponse()
     }
 
-    @PutMapping("/update/{commentId}")
+    @PutMapping("/{commentId}")
     fun update(
         @RequestHeader("Authorization") token: String,
         @IfLogin loginUserDto: LoginUserDto,

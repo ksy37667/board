@@ -25,7 +25,7 @@ class RefreshTokenService(
 
     @Transactional
     fun deleteRefreshToken(refreshToken: String) {
-        refreshTokenRepository.findByValue(refreshToken)?.let(refreshTokenRepository::delete)
+        refreshTokenRepository.deleteByValue(refreshToken)
     }
 
     fun refresh(request: RefreshTokenRequest): LoginResponse {

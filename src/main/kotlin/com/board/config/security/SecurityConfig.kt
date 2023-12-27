@@ -45,6 +45,7 @@ class WebSecurityConfig(
                 AntPathRequestMatcher("/api/user/login"),
                 AntPathRequestMatcher("/api/user/refreshToken"),
                 AntPathRequestMatcher("/api/user/sign-up"),
+                AntPathRequestMatcher("/api/user/logout"),
 
                 // 스웨거
                 AntPathRequestMatcher( "/swagger-ui.html"),

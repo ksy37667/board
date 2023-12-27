@@ -11,16 +11,14 @@ import com.board.service.RefreshTokenService
 import com.board.wrapDataResponse
 import io.swagger.annotations.Api
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.DeleteMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
 
 
 @Api(tags = ["User API"], description = "유저 API")
-@RestController("/api/user")
+@RestController
+@RequestMapping("/api/user")
 class UserController(
     private val signUpService: SignUpService,
     private val loginService: LoginService,

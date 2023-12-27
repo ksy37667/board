@@ -28,14 +28,14 @@ class BoardController(
         return postSearchService.search(request).wrapPageResponse()
     }
 
-    @GetMapping("/read/{id}")
+    @GetMapping("/{id}")
     fun read(
        @PathVariable(name = "id") id: Long
     ): APIEnvelop<*> {
         return postCrudService.read(id).wrapDataResponse()
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     fun delete(
         @IfLogin loginUserDto: LoginUserDto,
         @RequestHeader("Authorization") token: String,
@@ -44,7 +44,7 @@ class BoardController(
         return postCrudService.delete(loginUserDto, id).wrapDataResponse()
     }
 
-    @PostMapping("/create")
+    @PostMapping
     fun create(
         @IfLogin loginUserDto: LoginUserDto,
         @RequestHeader("Authorization") token: String,
@@ -53,7 +53,7 @@ class BoardController(
         return postCrudService.create(loginUserDto, request).wrapDataResponse()
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     fun update(
         @PathVariable id: Long,
         @IfLogin loginUserDto: LoginUserDto,

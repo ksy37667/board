@@ -13,4 +13,6 @@ interface RefreshTokenRepository: JpaRepository<RefreshToken, Long>{
 
     @Transactional(readOnly = true)
     fun findByValue(value: String): RefreshToken?
+
+    fun deleteByValue(value: String)
 }

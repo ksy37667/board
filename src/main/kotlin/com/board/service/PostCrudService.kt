@@ -58,15 +58,17 @@ class PostCrudService(
     ): PostResponse {
         val post = postRepository.findById(id).orElseThrow { throw PostNotFoundException() }
         if (loginUserDto.userId != post.userId) throw NotAuthorityException()
-        return PostResponse(
-            postRepository.save(
-                post.apply {
-                    this.title = post.title
-                    this.content = post.content
-                    this.status = post.status
-                }
-            )
+
+        postRepository.save(
+            post.apply {
+                this.title = request.title
+                this.content = request.content
+                this.status = request.status
+            }
         )
+
+        return PostResponse(post)
+
     }
 
     fun delete(
