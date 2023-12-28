@@ -17,7 +17,8 @@ enum class ErrorCode(
     NOT_FOUND_EMAIL(HttpStatus.BAD_REQUEST, "존재 하지 않는 이메일입니다.."),
     USERINFO_INCORRECT(HttpStatus.UNAUTHORIZED, "아이디 혹은 비밀번호를 다시 입력해주세요."),
     DORMANT_USER(HttpStatus.FORBIDDEN, "휴면 상태 아이디입니다."),
-    NOT_FOUND_COMMENT(HttpStatus.NOT_FOUND, "존재하지 않는 댓글입니다.")
+    NOT_FOUND_COMMENT(HttpStatus.NOT_FOUND, "존재하지 않는 댓글입니다."),
+    METHOD_NOT_ALLOWED(HttpStatus.METHOD_NOT_ALLOWED, "Method type is invalid"),
 }
 
 

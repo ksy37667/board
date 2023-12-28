@@ -6,6 +6,7 @@ import com.board.exception.ErrorResponse
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.web.HttpRequestMethodNotSupportedException
 import org.springframework.web.bind.MethodArgumentNotValidException
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice
@@ -30,6 +31,16 @@ class GlobalControllerAdvice {
         log.error("handleException", e)
         val response = ErrorResponse(ErrorCode.ERR_INTERNAL_ERROR)
         return ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR)
+    }
+
+    /**
+     * 지원하지 않은 HTTP method 호출 할 경우 발생
+     */
+    @ExceptionHandler(HttpRequestMethodNotSupportedException::class)
+    protected fun handleHttpRequestMethodNotSupportedException(e: HttpRequestMethodNotSupportedException?): ResponseEntity<ErrorResponse> {
+        log.error("HttpRequestMethodNotSupportedException", e)
+        val response = ErrorResponse(ErrorCode.METHOD_NOT_ALLOWED)
+        return ResponseEntity(response, HttpStatus.METHOD_NOT_ALLOWED)
     }
 
     /**
