@@ -18,11 +18,11 @@ data class PostsSearchRequest(
     @field:Min(value = 2, message = "두글자부터 검색이 가능합니다.")
     val title: String?,
 
-    @field:Min(value = 1, message = "두글자부터 검색이 가능합니다.")
+    @field:Min(value = 2, message = "두글자부터 검색이 가능합니다.")
     val content: String?,
     val userId: Long?,
 
-    @field:Min(value = 1, message = "두글자부터 검색이 가능합니다.")
+    @field:Min(value = 2, message = "두글자부터 검색이 가능합니다.")
     val writer: String?,
     val status: MutableList<Post.Status>?,
 

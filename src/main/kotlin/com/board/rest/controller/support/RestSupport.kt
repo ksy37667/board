@@ -3,11 +3,10 @@ package com.board.rest.controller.support
 import com.board.config.web.MEDIA_TYPE_APPLICATION_JSON_UTF8
 import com.fasterxml.jackson.annotation.JsonAutoDetect
 import io.swagger.annotations.ApiModel
-import org.springframework.http.ResponseEntity
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
-import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import javax.validation.constraints.Min
 
 abstract class RestSupport {
@@ -16,11 +15,6 @@ abstract class RestSupport {
             .ok()
             .contentType(MEDIA_TYPE_APPLICATION_JSON_UTF8)
             .body(data)
-    }
-
-    protected open fun unauthorized(message: String): ResponseEntity<Any> {
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-            .body(message)
     }
 }
 
