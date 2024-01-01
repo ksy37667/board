@@ -2,17 +2,14 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 object DependencyVersions {
   const val SWAGGER_VERSION = "2.9.2"
-  const val kotlin_version = "1.3.72"
 }
 
 plugins {
-    val kotlinVersion = "1.4.32"
+    val kotlinVersion = "1.4.31"
 
-    id("com.diffplug.gradle.spotless") version "3.28.1"
     id("org.springframework.boot") version "2.4.5"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     kotlin("jvm") version kotlinVersion
-    kotlin("kapt") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
     kotlin("plugin.allopen") version kotlinVersion
