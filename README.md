@@ -24,6 +24,8 @@ JWT는 `stateless` 한 장점을 가지고 있지만 100% `stateless` 한 장점
 * `로그아웃` 
   * refresh token 을 DB 에서 삭제해서 더 이상 refresh token 을 사용할 수 없도록 한다.
 
+<br>
+
 ### 2. spring security + jwt 를 사용한 인증
 ### AuthenticationManager
 `AuthenticationManager`는 인증을 담당하는데, `authenticate` 메소드를 가지고 있다.<br>
@@ -35,18 +37,19 @@ JWT는 `stateless` 한 장점을 가지고 있지만 100% `stateless` 한 장점
 나는 `JwtAuthenticationProvider` 를 만들고 JWT 인증을 처리한다.<br>
 
 ### JwtAuthenticationProvider
-`JwtAuthenticationToken` 을 받아서 토큰의 유효성을 검사하고 유효하다면 `Authentication` 객체를 구현한다.
-JWT token으로부터 Claim을 추출하고 email, 권한등을 확인해서 JwtAuthenticationToken 에 담아서 반환한다.
-JWT token이 유효하지 않은 경우에는 `JwtAuthenticationException` 을 발생시킨다.
+`JwtAuthenticationToken` 을 받아서 토큰의 유효성을 검사하고 유효하다면 `Authentication` 객체를 구현한다.<br>
+JWT token으로부터 Claim을 추출하고 email, 권한등을 확인해서 JwtAuthenticationToken 에 담아서 반환한다.<br>
+JWT token이 유효하지 않은 경우에는 `JwtAuthenticationException` 을 발생시킨다.<br>
 
 ### AccessDeniedHandler
 `AccessDeniedHandler`는 인증은 되었지만 권한이 없는 경우에 호출되는 핸들러이다.<br>
-403 Forbidden 오류가 발생한다. 
+403 Forbidden 오류가 발생한다. <br>
 
 ### AuthenticationEntryPoint
 `AuthenticationEntryPoint`는 인증이 되지 않은 경우에 호출되는 핸들러이다.<br>
-401 Unauthorized 오류가 발생한다.
+401 Unauthorized 오류가 발생한다.<br>
 
+---
 
 ## 구현 API 목록
 ### Board API
@@ -55,13 +58,13 @@ JWT token이 유효하지 않은 경우에는 `JwtAuthenticationException` 을 �
 * ```DELETE /api/board/delete/{id}```
 * ```POST /api/board/create```
 * ```PUT /api/board/update/{id}```
----
+
 ### User API
 * ```POST /api/user/login```
 * ```POST /api/user/signup```
 * ```POST /api/user/logout```
 * ```POST /api/user/refresh```
----
+
 ### Comment API
 * ```POST /api/comment/write```
 * ```GET /api/comment/read/{id}```
