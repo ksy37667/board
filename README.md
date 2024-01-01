@@ -42,7 +42,7 @@ JWT token으로부터 Claim을 추출하고 email, 권한등을 확인해서 Jwt
 JWT token이 유효하지 않은 경우에는 `JwtAuthenticationException` 을 발생시킨다.<br>
 
 ### AccessDeniedHandler
-`AccessDeniedHandler`는 인증은 되었지만 권한이 없는 경우에 호출되는 핸들러이다. <br>
+`AccessDeniedHandler`는 인증은 되었지만 권한이 없는 경우에 호출되는 핸들러이다.<br>
 `403 Forbidden` 오류가 발생한다. <br>
 `JwtAccessDeniedHandler` 를 구현해서 권한이 없는 경우에는 403 오류를 반환하도록 했다.<br>
 
