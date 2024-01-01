@@ -5,7 +5,7 @@ import com.board.entity.enums.RoleType
 import com.board.entity.enums.SocialType
 import com.board.entity.enums.UserStatus
 import com.board.exception.AlreadyExistEmailException
-import com.board.exception.AlreadyExistUsernameException
+import com.board.exception.AlreadyExisNicknameException
 import com.board.exception.NotFoundRoleException
 import com.board.repository.UserRepository
 import com.board.repository.RoleRepository
@@ -33,8 +33,8 @@ class SignUpService(
             throw AlreadyExistEmailException()
         }
 
-        if (userRepository.existsByUsername(request.username)) {
-            throw AlreadyExistUsernameException()
+        if (userRepository.existsByNickname(request.nickname)) {
+            throw AlreadyExisNicknameException()
         }
 
         val role = roleRepository.findByName(RoleType.ROLE_USER) ?: throw NotFoundRoleException()
@@ -43,7 +43,7 @@ class SignUpService(
             userRepository.save(
                 User(
                     email = request.email,
-                    nickname = request.nickName,
+                    nickname = request.nickname,
                     username = request.username,
                     status = UserStatus.ACTIVATED,
                     password = passwordEncoder.encode(request.password),

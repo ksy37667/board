@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional
 interface UserRepository: JpaRepository<User, Long> {
 
     @Transactional(readOnly = true)
-    fun existsByUsername(username: String): Boolean
+    fun existsByNickname(nickname: String): Boolean
 
     @Transactional(readOnly = true)
     fun existsByEmail(email: String): Boolean

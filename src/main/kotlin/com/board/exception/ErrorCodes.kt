@@ -10,7 +10,7 @@ enum class ErrorCode(
     NOT_FOUND_POST(HttpStatus.NOT_FOUND, "해당 게시글을 찾을 수 없습니다."),
     DELETE_POST(HttpStatus.NOT_FOUND, "삭제된 게시글입니다."),
     NOT_AUTHORITY(HttpStatus.FORBIDDEN, "권한이 없습니다."),
-    USERNAME_ALREADY_EXIST(HttpStatus.CONFLICT, "이미 존재하는 username 입니다."),
+    NICKNAME_ALREADY_EXIST(HttpStatus.CONFLICT, "이미 존재하는 nickname 입니다."),
     EMAIL_ALREADY_EXIST(HttpStatus.CONFLICT, "이미 존재하는 email 입니다."),
     NOT_FOUND_USER(HttpStatus.NOT_FOUND, "존재하지 않는 유저입니다."),
     NOT_FOUND_ROLE(HttpStatus.BAD_REQUEST, "잘못된 권한 입니다."),

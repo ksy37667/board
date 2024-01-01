@@ -13,7 +13,7 @@ open class BoardException(
 class PostNotFoundException : BoardException(ErrorCode.NOT_FOUND_POST)
 class PostDeletedException : BoardException(ErrorCode.DELETE_POST)
 class NotAuthorityException : BoardException(ErrorCode.NOT_AUTHORITY)
-class AlreadyExistUsernameException : BoardException(ErrorCode.USERNAME_ALREADY_EXIST)
+class AlreadyExisNicknameException : BoardException(ErrorCode.NICKNAME_ALREADY_EXIST)
 
 class AlreadyExistEmailException : BoardException(ErrorCode.EMAIL_ALREADY_EXIST)
 class NotFoundRoleException : BoardException(ErrorCode.NOT_FOUND_ROLE)
