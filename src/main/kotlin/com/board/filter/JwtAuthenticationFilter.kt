@@ -50,9 +50,6 @@ class JwtAuthenticationFilter(
             logger.error("Unsupported Token // token = {$token}")
             logger.error("Exception Code ${JwtExceptionCode.UNSUPPORTED_TOKEN.code}")
             throw BadCredentialsException("unsupported exception")
-        } catch (e: AccessDeniedException) {
-            logger.error("Unsupported Token // token = {$token}")
-            logger.error("Exception Code ${JwtExceptionCode.ACCESS_DENIED_EXCEPTION.code}")
         } catch (e: Exception) {
             logger.error("JwtFilter - doFilterInternal 오류 발생")
             logger.error("token = {$token}")
