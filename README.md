@@ -15,7 +15,7 @@
 JWT는 `stateless` 한 장점을 가지고 있지만 100% `stateless` 한 장점 만을 가지고 사용하기에는 보안상 문제가 발생할 수 있다.<br>
 특히 토큰이 탈취당한 경우에는 서버에서 토큰에 대한 제어 권한이 없기 때문에 토큰을 무효화 시킬 수 없다.<br>
 그래서 `access token` 의 만료 기간을 비교적 짧게 잡고 만료기간이 긴 `refresh token`은 db에서 관리한다.<br>
-만약 `access token` 을 탈취 당하더라도 만료기간이 짧기 때문에 비교적 안전하고 로그아웃시에 `refresh token`을 db에서 삭제하면 토큰을 사용할 수 없도록 한다.<br>
+만약 `access token` 을 탈취 당하더라도 만료기간이 짧기 때문에 비교적 안전하고 로그아웃시에 `refresh token`을 db에서 삭제해서 더 이상 토큰을 사용할 수 없도록 한다.<br>
 
 * `로그인 성공시`
   * access token 과 refresh token 을 발급한다. 이 과정에서 refresh token 은 DB 에 저장한다.
