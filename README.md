@@ -43,11 +43,13 @@ JWT token이 유효하지 않은 경우에는 `JwtAuthenticationException` 을 �
 
 ### AccessDeniedHandler
 `AccessDeniedHandler`는 인증은 되었지만 권한이 없는 경우에 호출되는 핸들러이다.<br>
-403 Forbidden 오류가 발생한다. <br>
+`403 Forbidden` 오류가 발생한다. <br>
+`JwtAccessDeniedHandler` 를 구현해서 권한이 없는 경우에는 403 오류를 반환하도록 했다.<br>
 
 ### AuthenticationEntryPoint
 `AuthenticationEntryPoint`는 인증이 되지 않은 경우에 호출되는 핸들러이다.<br>
-401 Unauthorized 오류가 발생한다.<br>
+`401 Unauthorized` 오류가 발생한다.<br>
+`CustomAuthenticationEntryPoint` 를 구현해서 인증이 되지 않은 경우에는 401 오류를 반환하도록 했다.<br>
 
 ---
 
